@@ -33,3 +33,14 @@ Route::get('/sum', function () {
     // print_r("Hello laravel sum");
     // return view('hello');
 });
+
+Route::get('/dump', function () {
+    // dd (dump and die) → 停止以下的程式碼
+    // dump → 繼續以下的程式碼 
+    $name = 'feng';
+    $mobile = '09-8765-4321';
+    dump($name,$mobile);
+    $text = "$name - $mobile";
+    dd($text);
+    // return view('fenghome');
+});
