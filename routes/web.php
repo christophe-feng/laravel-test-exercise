@@ -6,12 +6,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('welcome123');
-});
+// Route::get('/', function () {
+//     return view('welcome123');
+// });
 
 Route::get('/', function () {       //input
-    return view('laravel');           //output
+    return view('laravel');         //output
 });
 
 Route::get('/feng', function () {
@@ -29,7 +29,7 @@ Route::get('/sum', function () {
         $sum = $sum + $i;
     }
     dd($sum);
-    
+
     // print_r("Hello laravel sum");
     // return view('hello');
 });
