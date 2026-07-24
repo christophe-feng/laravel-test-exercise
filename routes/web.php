@@ -39,8 +39,19 @@ Route::get('/dump', function () {
     // dump → 繼續以下的程式碼 
     $name = 'feng';
     $mobile = '09-8765-4321';
-    dump($name,$mobile);
+    dump($name, $mobile);
     $text = "$name - $mobile";
     dd($text);
     // return view('fenghome');
 });
+
+// 從網址動態抓取變數
+Route::get('/user/{id}', function (string $id) {
+    dd($id);
+    return 'User ' . $id;
+});
+
+Route::get('/posts/{post}/comments/{comment}', function (string $postId, string $commentId) {
+    dd($postId . '-' . $commentId);
+});
+// 
