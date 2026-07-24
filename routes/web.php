@@ -54,4 +54,14 @@ Route::get('/user/{id}', function (string $id) {
 Route::get('/posts/{post}/comments/{comment}', function (string $postId, string $commentId) {
     dd($postId . '-' . $commentId);
 });
+
+Route::get('/sum/{num}', function (string $num) {
+    // dd($num);
+    $sum = 0;
+    for ($i = 1; $i <= $num; $i++) {
+        $sum += $i;
+    }
+    dd($sum);
+    // return 'User ' . $num;
+});
 // 
