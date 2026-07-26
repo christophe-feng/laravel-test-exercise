@@ -22,17 +22,17 @@ Route::get('/hi', function () {
     return view('hello');
 });
 
-Route::get('/sum', function () {
+// Route::get('/sum', function () {
 
-    $sum = 0;
-    for ($i = 1; $i <= 10; $i++) {
-        $sum = $sum + $i;
-    }
-    dd($sum);
+//     $sum = 0;
+//     for ($i = 1; $i <= 10; $i++) {
+//         $sum = $sum + $i;
+//     }
+//     dd($sum);
 
-    // print_r("Hello laravel sum");
-    // return view('hello');
-});
+//     // print_r("Hello laravel sum");
+//     // return view('hello');
+// });
 
 Route::get('/dump', function () {
     // dd (dump and die) → 停止以下的程式碼
@@ -55,13 +55,27 @@ Route::get('/posts/{post}/comments/{comment}', function (string $postId, string 
     dd($postId . '-' . $commentId);
 });
 
-Route::get('/sum/{num}', function (string $num) {
+// Route::get('/sum/{num}', function (string $num) {
+//     // dd($num);
+//     $sum = 0;
+//     for ($i = 1; $i <= $num; $i++) {
+//         $sum += $i;
+//     }
+//     dd($sum);
+//     // return 'User ' . $num;
+// });
+// 
+
+// 從網址動態抓取變數，並顯示在前台頁面
+// 在num後面加上'?'、$num後面加上'=null'，即可將網址的參數變更為"選擇性"
+Route::get('/sum/{num?}', function (string $num = null) {
     // dd($num);
-    $sum = 0;
-    for ($i = 1; $i <= $num; $i++) {
-        $sum += $i;
-    }
-    dd($sum);
+    // $sum = 0;
+    // for ($i = 1; $i <= $num; $i++) {
+    //     $sum += $i;
+    // }
+    // dd($sum);
     // return 'User ' . $num;
+    return view('sum');
 });
 // 
