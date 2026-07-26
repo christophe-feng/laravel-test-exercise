@@ -89,3 +89,21 @@ Route::get('/sum/{num?}', function (string $num = null) {
     return view('sum')->with('result', $data);
 });
 // 
+
+// 從網址動態抓取變數製作簡易計算機，並用'with()'將結果傳至在前台頁面
+Route::get('/calculator/{num1}/{num2}', function (string $num1, string $num2) {
+
+    $data = [
+        'num1' => $num1,
+        'num2' => $num2,
+        'plus' => $num1 + $num2,
+        'minus' => $num1 - $num2,
+        'multiply' => $num1 * $num2,
+        'divide' => $num1 / $num2,
+    ];
+
+    dd($data);
+
+    // return view('sum')->with('result', $data);
+});
+// 
