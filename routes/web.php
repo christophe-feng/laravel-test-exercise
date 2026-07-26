@@ -102,8 +102,8 @@ Route::get('/calculator/{num1}/{num2}', function (string $num1, string $num2) {
         'divide' => $num1 / $num2,
     ];
 
-    dd($data);
+    // dd($data);
 
-    // return view('sum')->with('result', $data);
+    return view('calculator')->with('result', $data);
 });
 // 
