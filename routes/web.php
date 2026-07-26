@@ -66,16 +66,26 @@ Route::get('/posts/{post}/comments/{comment}', function (string $postId, string 
 // });
 // 
 
-// 從網址動態抓取變數，並顯示在前台頁面
+// 從網址動態抓取變數，並用'with()'將物件傳至在前台頁面
 // 在num後面加上'?'、$num後面加上'=null'，即可將網址的參數變更為"選擇性"
 Route::get('/sum/{num?}', function (string $num = null) {
     // dd($num);
-    // $sum = 0;
-    // for ($i = 1; $i <= $num; $i++) {
-    //     $sum += $i;
-    // }
-    // dd($sum);
+    $sum = 0;
+    for ($i = 1; $i <= $num; $i++) {
+        $sum += $i;
+    }
+
+    // 可以將多個變數用陣列組合成一個變數
+    $data = [
+        'num' => $num,
+        'sum' => $sum,
+    ];
+
+    // dd($data);
     // return 'User ' . $num;
-    return view('sum');
+
+    // with() 可以將後端的封包傳至前端
+    // '('result', $data)' 是指後端定義的$data傳到前端後，變數變成$result
+    return view('sum')->with('result', $data);
 });
 // 

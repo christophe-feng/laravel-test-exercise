@@ -7,5 +7,9 @@
 </head>
 <body>
     This is SUM page.
+    <?php 
+    dump($data ?? 'No data passed');
+    dump($result ?? 'No data passed');
+    ?>
 </body>
 </html>
