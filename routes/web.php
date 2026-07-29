@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+//  controller 與 router 綁定
 use App\Http\Controllers\TestController;
 
+    // 要顯示不同的頁面，就要建立不同的 route 
 Route::get('/test', [TestController::class, 'index']);
+Route::get('/test_hi', [TestController::class, 'hi']);
+// 
 
 // Route::get('/', function () {
 //     return view('welcome');
