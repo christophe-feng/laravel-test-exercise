@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 
 
-// 要顯示不同的頁面，就要建立不同的 router 
+// 要顯示不同的頁面，就要建立不同的 route 
 Route::get('/test', [TestController::class, 'index']);
 Route::get('/test_hi', [TestController::class, 'hi']);
 // 
@@ -14,6 +14,7 @@ Route::get('/test_hi', [TestController::class, 'hi']);
 //  resourse controller 與 route 的綁定
 use App\Http\Controllers\ExampleController;
 
+// 要注意單複數的差別
 Route::resource('examples', ExampleController::class);
 // 
 
