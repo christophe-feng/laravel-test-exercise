@@ -12,7 +12,7 @@ class AppleController extends Controller
     public function index()
     {
         // dd('apple controller index ok 123');
-        return view('apple.index');
+        return view('apples.index');
     }
 
     /**

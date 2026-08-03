@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    Hello Apple_1f View
+    Hello Apple_1f View <br>
+    <!-- 建立回到首頁的連結 -->
+    <a href="{{route('apples.index')}}">回首頁</a>
 </body>
 </html>
