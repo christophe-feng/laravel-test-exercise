@@ -5,19 +5,26 @@ use Illuminate\Support\Facades\Route;
 //  controller 與 router 綁定
 use App\Http\Controllers\TestController;
 
-//  resourse controller 與 route 的綁定
-use App\Http\Controllers\ExampleController;
-use App\Http\Controllers\AppleController;
-
-
 // 要顯示不同的頁面，就要建立不同的 route 
 Route::get('/test', [TestController::class, 'index']);
 Route::get('/test_hi', [TestController::class, 'hi']);
 // 
 
-// 要注意單複數的差別
+//  resourse controller 與 route 的綁定
+use App\Http\Controllers\ExampleController;
+
 Route::resource('examples', ExampleController::class);
+// 
+
+// 要顯示不同的頁面，就要建立不同的 route 
+// 要注意單複數的差別
+// 可以用`->name()`來命名新的路由
+use App\Http\Controllers\AppleController;
+
 Route::resource('apples', AppleController::class);
+Route::get('/apples_1f', [AppleController::class, 'f1'])->name('apples.f1');
+Route::get('/apples_2f', [AppleController::class, 'f2'])->name('apples.f2');
+Route::get('/apples_3f', [AppleController::class, 'f3'])->name('apples.f3');
 // 
 
 // Route::get('/', function () {

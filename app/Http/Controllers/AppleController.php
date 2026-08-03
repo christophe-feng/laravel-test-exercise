@@ -11,7 +11,8 @@ class AppleController extends Controller
      */
     public function index()
     {
-        dd('apple controller index ok 123');
+        // dd('apple controller index ok 123');
+        return view('apple.index');
     }
 
     /**
@@ -60,5 +61,23 @@ class AppleController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function f1()
+    {
+        // dd('Apple_1f ok');
+        return view('apples.f1');
+    }
+
+    public function f2()
+    {
+        // dd('Apple_2f ok');
+        return view('apples.f2');
+    }
+
+    public function f3()
+    {
+        // dd('Apple_3f ok');
+        return view('apples.f3');
     }
 }
