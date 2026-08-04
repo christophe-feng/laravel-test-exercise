@@ -11,8 +11,33 @@ class AppleController extends Controller
      */
     public function index()
     {
+        $data = [
+            [
+                'id' => 1,
+                'name' => 'apple',
+                'qt' => 10
+            ],
+            [
+                'id' => 2,
+                'name' => 'banana',
+                'qt' => 30
+            ],
+            [
+                'id' => 3,
+                'name' => 'cat',
+                'qt' => 50
+            ],
+        ];
+        
+        // 檢查資料是否正確
         // dd('apple controller index ok 123');
-        return view('apples.index');
+        // dd($data);
+        // 
+
+        // 後端資料傳送至前端
+        // return view('apples.index')->with('info',$data);
+        return view('apples.index', ['info' => $data]);
+        // 
     }
 
     /**
