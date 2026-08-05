@@ -105,4 +105,9 @@ class AppleController extends Controller
         // dd('Apple_3f ok');
         return view('apples.f3');
     }
+
+    public function child(){
+        // dd('AppleController child layout ok');
+        return view('child');
+    }
 }
