@@ -91,23 +91,27 @@ class AppleController extends Controller
     public function f1()
     {
         // dd('Apple_1f ok');
-        return view('apples.f1');
+        return view('apple.f1');
     }
 
     public function f2()
     {
         // dd('Apple_2f ok');
-        return view('apples.f2');
+        return view('apple.f2');
     }
 
     public function f3()
     {
         // dd('Apple_3f ok');
-        return view('apples.f3');
+        return view('apple.f3');
     }
 
     public function child(){
         // dd('AppleController child layout ok');
         return view('child');
+    }
+
+    public function b1(){
+        return view('apple.blue.b1');
     }
 }
