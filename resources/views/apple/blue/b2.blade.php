@@ -1,3 +1,3 @@
 @extends('layouts.blue')
 
-@section('container','This is container.')
+@section('container1','This is container.')

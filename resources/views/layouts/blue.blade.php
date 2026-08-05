@@ -15,8 +15,11 @@
 
 <body>
 <h1>blue blue blue</h1>
-<div class="container">
-    @yield('container')
+<div class="container1">
+    @yield('container1')
+</div>
+<div class="container2">
+    @yield('container2')
 </div>
 </body>
 
