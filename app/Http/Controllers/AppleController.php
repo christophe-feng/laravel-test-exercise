@@ -114,4 +114,8 @@ class AppleController extends Controller
     public function b1(){
         return view('apple.blue.b1');
     }
+
+    public function b2(){
+        return view('apple.blue.b2');
+    }
 }

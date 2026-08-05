@@ -15,6 +15,9 @@
 
 <body>
 <h1>blue blue blue</h1>
+<div class="container">
+    @yield('container')
+</div>
 </body>
 
 </html>
