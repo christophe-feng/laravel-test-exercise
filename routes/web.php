@@ -35,6 +35,7 @@ Route::get('/apples_b3', [AppleController::class, 'b3'])->name('apples.b3');
 Route::get('/apples_r1', [AppleController::class, 'r1'])->name('apples.r1');
 Route::get('/apples_r2', [AppleController::class, 'r2'])->name('apples.r2');
 Route::get('/apples_r3', [AppleController::class, 'r3'])->name('apples.r3');
+Route::get('/apples_all', [AppleController::class, 'all'])->name('apples.all');
 // 
 
 // Route::get('/', function () {

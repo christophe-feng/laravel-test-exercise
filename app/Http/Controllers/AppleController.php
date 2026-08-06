@@ -134,4 +134,8 @@ class AppleController extends Controller
     public function r3(){
         return view('apple.red.r3');
     }
+
+    public function all(){
+        return view('apple.red.all');
+    }
 }
