@@ -13,10 +13,10 @@
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">BLUE</a>
+        <a class="nav-link" href="{{route('blues.index')}}">BLUE</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">RED</a>
+        <a class="nav-link" href="{{route('reds.index')}}">RED</a>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link" href="#">Link 3</a>
