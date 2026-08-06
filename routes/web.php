@@ -32,6 +32,9 @@ Route::get('/apples_child', [AppleController::class, 'child'])->name('apples.chi
 Route::get('/apples_b1', [AppleController::class, 'b1'])->name('apples.b1');
 Route::get('/apples_b2', [AppleController::class, 'b2'])->name('apples.b2');
 Route::get('/apples_b3', [AppleController::class, 'b3'])->name('apples.b3');
+Route::get('/apples_r1', [AppleController::class, 'r1'])->name('apples.r1');
+Route::get('/apples_r2', [AppleController::class, 'r2'])->name('apples.r2');
+Route::get('/apples_r3', [AppleController::class, 'r3'])->name('apples.r3');
 // 
 
 // Route::get('/', function () {
