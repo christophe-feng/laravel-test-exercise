@@ -38,6 +38,18 @@ Route::get('/apples_r3', [AppleController::class, 'r3'])->name('apples.r3');
 Route::get('/apples_all', [AppleController::class, 'all'])->name('apples.all');
 // 
 
+// BlueController
+use App\Http\Controllers\BlueController;
+
+Route::resource('blues', BlueController::class);
+//
+
+// RedController
+use App\Http\Controllers\RedController;
+
+Route::resource('reds', RedController::class);
+// 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
