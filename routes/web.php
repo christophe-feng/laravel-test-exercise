@@ -1,29 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 //  controller 與 router 綁定
 use App\Http\Controllers\TestController;
+
+// 要顯示不同的頁面，就要建立不同的 route 
+use App\Http\Controllers\AppleController;
+use App\Http\Controllers\BlueController;
+use App\Http\Controllers\RedController;
+use App\Http\Controllers\BananaController;
+
 
 // 要顯示不同的頁面，就要建立不同的 route
 // TestController
 Route::get('/test', [TestController::class, 'index']);
 Route::get('/test_hi', [TestController::class, 'hi']);
-// 
 
-// resourse controller 與 route 的綁定
-// ExampleController
-use App\Http\Controllers\ExampleController;
-
-Route::resource('examples', ExampleController::class);
-// 
-
-// 要顯示不同的頁面，就要建立不同的 route 
+Route::resource('bananas', BananaController::class);
 // 要注意單複數的差別
 // 可以用`->name()`來命名新的路由
 // AppleController
-use App\Http\Controllers\AppleController;
-
 Route::resource('apples', AppleController::class);
 Route::get('/apples_1f', [AppleController::class, 'f1'])->name('apples.f1');
 Route::get('/apples_2f', [AppleController::class, 'f2'])->name('apples.f2');
@@ -36,19 +32,13 @@ Route::get('/apples_r1', [AppleController::class, 'r1'])->name('apples.r1');
 Route::get('/apples_r2', [AppleController::class, 'r2'])->name('apples.r2');
 Route::get('/apples_r3', [AppleController::class, 'r3'])->name('apples.r3');
 Route::get('/apples_all', [AppleController::class, 'all'])->name('apples.all');
-// 
 
 // BlueController
-use App\Http\Controllers\BlueController;
-
 Route::resource('blues', BlueController::class);
-//
 
 // RedController
-use App\Http\Controllers\RedController;
-
 Route::resource('reds', RedController::class);
-// 
+
 
 // Route::get('/', function () {
 //     return view('welcome');

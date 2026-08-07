@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ExampleController extends Controller
+class BananaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        dd('ExampleController index ok');
+        // dd('BananaController view ok');
+        $data = DB::select('select * from students');
+        dd($data);
     }
 
     /**
