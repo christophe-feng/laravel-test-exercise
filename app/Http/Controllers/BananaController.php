@@ -17,9 +17,11 @@ class BananaController extends Controller
         $data = DB::select('select * from students');
         // dd($data);
 
-        foreach ($data as $key => $value) {
-            echo 'ID: ' . $value->id . 'Name: ' . $value->name . 'Mobile: ' . $value->mobile . '<br>';
-        }
+        // foreach ($data as $key => $value) {
+        //     echo 'ID: ' . $value->id . 'Name: ' . $value->name . 'Mobile: ' . $value->mobile . '<br>';
+        // }
+
+        return view('banana.index')->with('data',$data);
     }
 
     /**
