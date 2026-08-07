@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// 資料庫連線
 use Illuminate\Support\Facades\DB;
 
 class BananaController extends Controller
@@ -14,7 +15,11 @@ class BananaController extends Controller
     {
         // dd('BananaController view ok');
         $data = DB::select('select * from students');
-        dd($data);
+        // dd($data);
+
+        foreach ($data as $key => $value) {
+            echo 'ID: ' . $value->id . 'Name: ' . $value->name . 'Mobile: ' . $value->mobile . '<br>';
+        }
     }
 
     /**
