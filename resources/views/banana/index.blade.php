@@ -1,6 +1,6 @@
-@php
+{{--@php
 dump($data);
-@endphp
+@endphp--}}
 
 <!DOCTYPE html>
 <html lang="en">

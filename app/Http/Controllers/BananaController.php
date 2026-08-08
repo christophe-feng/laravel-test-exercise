@@ -14,11 +14,17 @@ class BananaController extends Controller
     public function index()
     {
         // dd('BananaController view ok');
+        // 原生sql語法
         $data = DB::select('select * from students');
-        // dd($data);
 
+        // $data = DB::table('students')->get();
+        dd($data);
+
+        // 用foreach把資料呼叫出來
         // foreach ($data as $key => $value) {
         //     echo 'ID: ' . $value->id . 'Name: ' . $value->name . 'Mobile: ' . $value->mobile . '<br>';
+        // 
+
         // }
 
         return view('banana.index')->with('data',$data);
