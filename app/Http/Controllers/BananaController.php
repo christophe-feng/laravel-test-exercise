@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // 資料庫連線
 use Illuminate\Support\Facades\DB;
+// 與model做綁定
+use App\Models\Cat;
+
+
 
 class BananaController extends Controller
 {
@@ -15,19 +19,31 @@ class BananaController extends Controller
     {
         // dd('BananaController view ok');
         // 原生sql語法
-        $data = DB::select('select * from students');
+        // $data = DB::select('select * from students');
+        // $sql = 'SELECT * FROM `students` WHERE `name`= \'banana\'';
+        // $data = DB::select($sql);
 
+        // 框架語法
         // $data = DB::table('students')->get();
-        dd($data);
+        // $data = DB::table('students')->where('name', 'banana')->get();
+        // dd($data);
 
         // 用foreach把資料呼叫出來
         // foreach ($data as $key => $value) {
         //     echo 'ID: ' . $value->id . 'Name: ' . $value->name . 'Mobile: ' . $value->mobile . '<br>';
+        // }
         // 
 
-        // }
-
-        return view('banana.index')->with('data',$data);
+        // 利用 model 將資料庫的資料呼叫出來
+        $data = Cat::all();
+        // $data = Cat::get();
+        // $data = Cat::where('name','apple')->get();
+        // $data = Cat::where('name','apple')->first();
+        // $data = Cat::where('name','apple')->toSql();
+        dd($data);
+        // 
+        
+        return view('banana.index')->with('data', $data);
     }
 
     /**
