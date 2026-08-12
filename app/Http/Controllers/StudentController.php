@@ -14,8 +14,22 @@ class StudentController extends Controller
     {
         // $data = Student::all();
         $data = Student::get();
-        dd($data);
+        
+        // 可以將資料組合成一包傳送
+        // $result = Student::get();
+        // $data=[
+        //     'data'=>$result,
+        //     'test'=>'This is test message.',
+        // ];
+        // 
+
+        // dd($data['test']);
         // dd('student controller index ok');
+
+        // 將資料傳送至前端
+        // return view('student.index',['data'=>$data])->with('data',$data);
+        // return view('student.index',['data'=>$data]);
+        return view('student.index')->with('data',$data);
     }
 
     /**
