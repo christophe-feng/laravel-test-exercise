@@ -3,12 +3,11 @@
 use Illuminate\Support\Facades\Route;
 //  controller 與 router 綁定
 use App\Http\Controllers\TestController;
-
-// 要顯示不同的頁面，就要建立不同的 route 
 use App\Http\Controllers\AppleController;
 use App\Http\Controllers\BlueController;
 use App\Http\Controllers\RedController;
 use App\Http\Controllers\BananaController;
+use App\Http\Controllers\StudentController;
 
 
 // 要顯示不同的頁面，就要建立不同的 route
@@ -39,6 +38,8 @@ Route::resource('blues', BlueController::class);
 // RedController
 Route::resource('reds', RedController::class);
 
+// StudentController
+Route::resource('students', StudentController::class);
 
 // Route::get('/', function () {
 //     return view('welcome');
