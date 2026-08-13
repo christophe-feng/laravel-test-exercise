@@ -36,8 +36,8 @@ dump($data);
                     <td>{{$value->name}}</td>
                     <td>{{$value->mobile}}</td>
                 </tr>
-                @endforeach
             </tbody>
+            @endforeach
         </table>
     </div>
 
