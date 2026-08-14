@@ -37,7 +37,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        // dd('student create ok');
+        return view('student.create');
     }
 
     /**

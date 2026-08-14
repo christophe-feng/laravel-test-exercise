@@ -16,8 +16,13 @@ dump($data);
 <body>
 
     <div class="container mt-3">
-        <h2>Bordered Table</h2>
+        <h2>學生資料總表</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <!-- 用bootstrap製作按鈕和排版 -->
+        <div class="text-end mb-3">
+            <a href="{{route('students.create')}}" class="btn btn-success">新增</a>
+        </div>
+        <!--  -->
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -29,7 +34,7 @@ dump($data);
             <!-- 傳過來的資料不是陣列形式 -->
             @foreach($data as $value)
             <!-- 用陣列包住整個資料的形式傳送 -->
-            <!-- @foreach($data['data'] as $value) -->
+            {{-- @foreach($data['data'] as $value) --}}
             <tbody>
                 <tr>
                     <td>{{$value->id}}</td>
