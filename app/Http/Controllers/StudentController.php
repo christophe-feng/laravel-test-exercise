@@ -14,7 +14,7 @@ class StudentController extends Controller
     {
         // $data = Student::all();
         $data = Student::get();
-        
+
         // 可以將資料組合成一包傳送
         // $result = Student::get();
         // $data=[
@@ -29,7 +29,7 @@ class StudentController extends Controller
         // 將資料傳送至前端
         // return view('student.index',['data'=>$data])->with('data',$data);
         // return view('student.index',['data'=>$data]);
-        return view('student.index')->with('data',$data);
+        return view('student.index')->with('data', $data);
     }
 
     /**
@@ -47,9 +47,16 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // $input=$request->all();
-        $input=$request->except('_token');
-        dd($input);
+        $input = $request->except('_token');
         // dd('student store ok');
+        // dd($input);
+
+        $data = new Student();
+        $data->name = $input['name'];
+        $data->mobile = $input['mobile'];
+        $data->save();
+        return redirect()->route('students.index');
+        // dd('student store method ok');
     }
 
     /**
