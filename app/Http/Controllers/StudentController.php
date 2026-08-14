@@ -72,7 +72,7 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        dd('student edit method ok ' . $id);
     }
 
     /**

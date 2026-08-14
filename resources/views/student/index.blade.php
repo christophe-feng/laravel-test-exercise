@@ -27,8 +27,9 @@ dump($data);
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>MOBILE</th>
+                    <th>姓名</th>
+                    <th>電話</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <!-- 傳過來的資料不是陣列形式 -->
@@ -40,6 +41,17 @@ dump($data);
                     <td>{{$value->id}}</td>
                     <td>{{$value->name}}</td>
                     <td>{{$value->mobile}}</td>
+                    <td>
+                        {{--@php
+                        $url=route('students.edit',$value->id);
+                        dd($url);
+                        @endphp--}}
+                        <!-- 兩者皆可 -->
+                        <!-- 修改資料時，需要將id傳送至後端 -->
+                        <a href="{{route('students.edit',$value->id)}}" class="btn btn-warning">修改</a>
+                        <!-- <a href="{{route('students.edit',['student'=>$value->id])}}" class="btn btn-warning">修改</a> -->
+                        <!--  -->
+                    </td>
                 </tr>
             </tbody>
             @endforeach
