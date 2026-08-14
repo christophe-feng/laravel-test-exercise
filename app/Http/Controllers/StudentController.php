@@ -46,7 +46,10 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $input=$request->all();
+        $input=$request->except('_token');
+        dd($input);
+        // dd('student store ok');
     }
 
     /**
