@@ -9,6 +9,11 @@ use App\Http\Controllers\RedController;
 use App\Http\Controllers\BananaController;
 use App\Http\Controllers\StudentController;
 
+// 
+Route::get('/', function () {
+    // dd('redirect ok');
+    return redirect()->route('students.index');
+});
 
 // 要顯示不同的頁面，就要建立不同的 route
 // TestController
@@ -49,9 +54,9 @@ Route::resource('students', StudentController::class);
 //     return view('welcome123');
 // });
 
-Route::get('/', function () {       //input
-    return view('laravel');         //output
-});
+// Route::get('/', function () {       //input
+//     return view('laravel');         //output
+// });
 
 Route::get('/feng', function () {
     return view('fenghome');
