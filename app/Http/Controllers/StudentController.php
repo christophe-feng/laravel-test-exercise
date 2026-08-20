@@ -72,7 +72,15 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        dd('student edit method ok ' . $id);
+        // where()和find()皆可鎖定id
+        // 用where()比較好維護
+        // $data = Student::find($id);
+        $data = Student::where('id', $id)->first();
+        // 
+
+        // dd($data);
+        // dd('student edit method ok ' . $id);
+        return view('student.edit')->with('data', $data);
     }
 
     /**
@@ -80,7 +88,17 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd('Student update method ' . $id . ' OK');
+        // 可以用all()，也可以用except()
+        // $input = $request->all();
+        $input = $request->except('_token','_method');
+        // 
+        $data = Student::where('id', $id)->first();
+        $data->name = $input['name'];
+        $data->mobile = $input['mobile'];
+        $data->save();
+
+        return redirect()->route('students.index');
     }
 
     /**
