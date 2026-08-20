@@ -91,7 +91,7 @@ class StudentController extends Controller
         // dd('Student update method ' . $id . ' OK');
         // 可以用all()，也可以用except()
         // $input = $request->all();
-        $input = $request->except('_token','_method');
+        $input = $request->except('_token', '_method');
         // 
         $data = Student::where('id', $id)->first();
         $data->name = $input['name'];
@@ -106,6 +106,15 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // dd('Student destory method ' . $id . ' OK');
+        // where()和find()皆可鎖定id
+        // 用where()比較好維護
+        // $data = Student::find($id);
+        $data = Student::where('id', $id)->first();
+        // 
+        
+        $data->delete();
+
+        return redirect()->route('students.index');
     }
 }

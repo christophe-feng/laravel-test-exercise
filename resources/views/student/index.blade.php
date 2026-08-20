@@ -46,10 +46,18 @@ dump($data);
                         $url=route('students.edit',$value->id);
                         dd($url);
                         @endphp--}}
-                        <!-- 兩者皆可 -->
-                        <!-- 修改資料時，需要將id傳送至後端 -->
-                        <a href="{{route('students.edit',$value->id)}}" class="btn btn-warning">修改</a>
-                        <!-- <a href="{{route('students.edit',['student'=>$value->id])}}" class="btn btn-warning">修改</a> -->
+                        <!-- 要在前端頁面傳送刪除的指令到後端時，要用form表單的形式 -->
+                        <!-- method要用'DELETE' -->
+                        <form action="{{route('students.destroy',['student' =>$value->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <!-- 兩者皆可 -->
+                            <!-- 修改資料時，需要將id傳送至後端 -->
+                            <a href="{{route('students.edit',$value->id)}}" class="btn btn-warning">修改</a>
+                            <!-- <a href="{{route('students.edit',['student'=>$value->id])}}" class="btn btn-warning">修改</a> -->
+                            <!--  -->
+                            <button type="submit" class="btn btn-danger">刪除</button>
+                        </form>
                         <!--  -->
                     </td>
                 </tr>
