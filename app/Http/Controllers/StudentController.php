@@ -13,7 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         // $data = Student::all();
-        $data = Student::get();
+        // $data = Student::get();
 
         // 可以將資料組合成一包傳送
         // $result = Student::get();
@@ -22,6 +22,8 @@ class StudentController extends Controller
         //     'test'=>'This is test message.',
         // ];
         // 
+
+        $data= Student::with('phone')->get();
 
         // dd($data['test']);
         // dd('student controller index ok');
@@ -112,7 +114,7 @@ class StudentController extends Controller
         // $data = Student::find($id);
         $data = Student::where('id', $id)->first();
         // 
-        
+
         $data->delete();
 
         return redirect()->route('students.index');

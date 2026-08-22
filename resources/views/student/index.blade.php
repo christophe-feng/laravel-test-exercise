@@ -28,6 +28,7 @@ dump($data);
                 <tr>
                     <th>ID</th>
                     <th>姓名</th>
+                    <th>手機</th>
                     <th>電話</th>
                     <th>操作</th>
                 </tr>
@@ -38,9 +39,10 @@ dump($data);
             {{-- @foreach($data['data'] as $value) --}}
             <tbody>
                 <tr>
-                    <td>{{$value->id}}</td>
-                    <td>{{$value->name}}</td>
-                    <td>{{$value->mobile}}</td>
+                    <td>{{$value->id ?? ''}}</td>
+                    <td>{{$value->name ?? ''}}</td>
+                    <td>{{$value->mobile ?? ''}}</td>
+                    <td>{{$value->phone->name ?? ''}}</td>
                     <td>
                         {{--@php
                         $url=route('students.edit',$value->id);
